@@ -7,7 +7,7 @@ from components.triton.utils import preprocess, postprocess
 
 
 class ModelInferencer:
-    def __init__(self, url: str = "localhost:8001"):
+    def __init__(self, url: str = "localhost:8002"):
         try:
             self.triton_client = grpcclient.InferenceServerClient(url)
         except Exception as e:
@@ -39,7 +39,7 @@ class ModelInferencer:
 
 
 if __name__ == "__main__":
-    trtis_server = ModelInferencer("localhost:8001")
+    trtis_server = ModelInferencer("localhost:8002")
     # load image
     input0_data = cv2.imread("/home/taiyoung/lgu_sync/Lenna.png")
 
